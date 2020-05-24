@@ -6,16 +6,16 @@
         }
     }
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
                 sh "apk add --no-cache mongodb"
-                sh 'chmod +x ./scripts/dropdb.sh'
-                sh 'npm install'
+                sh "chmod +x ./scripts/dropdb.sh"
+                sh "npm install"
             }
         }
-        stage('Test') {
+        stage("Test") {
             steps {
-                sh 'npm run test:ci'
+                sh "npm run test:ci"
             }
         }
     }
