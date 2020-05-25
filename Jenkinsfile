@@ -20,14 +20,14 @@
             steps {
                 sh "npm run test:ci"
             }
-         post{
-            always{
+         post {
+            always {
                junit "log/*.xml"
              }
           }
        }
-        stage("Production){
-           steps{
+        stage("Production) {
+           steps {
                 input message: "Go to production? (Click 'Proceed' to continue)"
                 sh "echo 'Subindo em produção'"
                 }
